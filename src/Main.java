@@ -2,20 +2,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        while (true) {
-            var scan = new Scanner(System.in);
-            System.out.print("Talet? ");
-            int talet = scan.nextInt();
-            if (talet <= 0)
-                break;
+        var scan = new Scanner(System.in);
+        System.out.print("Talet? ");
+        int talet = scan.nextInt();
+
+        for (int i = 1; i <= talet; i++) {
             boolean ärPrimtal = true;
-            for (int k = 2; k<talet; k++)
-                if (talet % k == 0)
+            for (int k = 2; k<i; k++)
+                if (i % k == 0)
                     ärPrimtal = false;
             if (ärPrimtal)
-                System.out.println("Primtal");
-            else
-                System.out.println("Ej primtal");
+                System.out.print(i + " ");
         }
     }
 }
